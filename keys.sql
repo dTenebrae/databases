@@ -7,6 +7,8 @@ ALTER TABLE bugs
         FOREIGN KEY (author_id) REFERENCES wiki_users(id);
 
 ALTER TABLE security
+    ADD CONSTRAINT security_package_id_fk
+        FOREIGN KEY (package_id) REFERENCES packages(id),
     ADD CONSTRAINT security_author_id_fk
         FOREIGN KEY (author_id) REFERENCES wiki_users(id);
 

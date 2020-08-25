@@ -32,7 +32,7 @@ CREATE TABLE bugs (
 
 CREATE TABLE security (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    package INT UNSIGNED NOT NULL COMMENT 'id пакета',
+    package_id INT UNSIGNED NOT NULL COMMENT 'id пакета',
     author_id INT UNSIGNED NOT NULL COMMENT 'id автора',
     status ENUM ('vulnerable', 'not affected', 'fixed') NOT NULL COMMENT 'Статус уязвимости',
     severity ENUM ('critical', 'high', 'medium', 'low', 'very low') NOT NULL COMMENT 'серьезность уязвимости',
@@ -62,7 +62,7 @@ CREATE TABLE packages (
     install_size INT NOT NULL COMMENT 'Размер пакета после установки',
     last_packager_id INT UNSIGNED COMMENT 'Создатель последней упаковки',
     signed_by_id INT UNSIGNED COMMENT 'Подписано кем',
-    package_contents TEXT COMMENT 'Содержимое акета',
+    package_contents TEXT COMMENT 'Содержимо пакета',
     build_date DATETIME COMMENT 'Когда создан билд',
     signature_date DATETIME COMMENT 'Когда подписан',
     last_update DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -74,7 +74,7 @@ CREATE TABLE aur (
     package_base VARCHAR(50) NOT NULL COMMENT 'Название пакета',
     description TEXT NOT NULL COMMENT 'описание пакета',
     upstream_url VARCHAR(255) NOT NULL COMMENT 'Ссылка на основной гит',
-    keywords JSON NOT NULL COMMENT 'Список ключевых слов',
+    keywords VARCHAR(255) NOT NULL COMMENT 'Список ключевых слов',
     license VARCHAR(50) NOT NULL COMMENT 'Под лицензией GPL etc.',
     submitter_id INT UNSIGNED NOT NULL COMMENT 'Кто выложил',
     last_packager_id INT UNSIGNED NOT NULL COMMENT 'Последний упаковщик',
@@ -166,7 +166,7 @@ CREATE TABLE wiki_bodys (
     subtitle VARCHAR(100) NOT NULL COMMENT 'Подзаголовок',
     body TEXT NOT NULL COMMENT 'Сама статья',
     author_id INT UNSIGNED NOT NULL COMMENT 'id автора',
-    editors JSON COMMENT 'Список редакторов',
+    editors VARCHAR(255) COMMENT 'Список редакторов',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     last_update DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE  CURRENT_TIMESTAMP
 );
