@@ -1,0 +1,21 @@
+CREATE INDEX aur_package_base_idx ON aur(package_base);
+CREATE INDEX aur_package_keywords_idx ON aur(keywords);
+CREATE INDEX bugs_category_idx ON bugs(category);
+CREATE INDEX bugs_task_type_idx ON bugs(task_type);
+CREATE INDEX forum_groups_name_idx ON forum_groups(name);
+CREATE INDEX forum_posts_title_idx ON forum_posts(title);
+CREATE INDEX forum_themes_name_idx ON forum_themes(name);
+CREATE INDEX forum_users_username_idx ON forum_users(username);
+CREATE INDEX forum_users_email_idx ON forum_users(email);
+CREATE INDEX forum_users_from_where_idx ON forum_users(from_where);
+CREATE INDEX images_included_kernel_idx ON images(included_kernel);
+CREATE INDEX mirrors_mirror_url_idx ON mirrors(mirror_url);
+CREATE INDEX news_title_idx ON news(title);
+CREATE INDEX packages_name_idx ON packages(name);
+CREATE INDEX packages_package_size_idx ON packages(package_size);
+CREATE INDEX security_type_idx ON security(type);
+CREATE INDEX wiki_bodys_subtitle_idx ON wiki_bodys(subtitle);
+CREATE INDEX wiki_contents_title_idx ON wiki_contents(title);
+CREATE INDEX wiki_users_username_idx ON wiki_users(username);
+CREATE INDEX wiki_users_email_idx ON wiki_users(email);
+
